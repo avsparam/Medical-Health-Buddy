@@ -20,8 +20,7 @@ def create_input_df(input_symptoms):
 
     input_symptoms_array = np.array(input_symptoms_df, dtype=np.float32)
     prediction_dl = model_dl.predict(input_symptoms_array)[0]
-    predictions.append(idx_to_disease[int(np.argmax(prediction_dl))])
-
+    predictions.append(idx_to_disease[int(np.argmax(prediction_dl))]+' ('+str(round(prediction_dl[np.argmax(prediction_dl)]*100, 2))+'%)')
     return predictions
 
 file = open('Dataset/symptoms.txt', 'r')
