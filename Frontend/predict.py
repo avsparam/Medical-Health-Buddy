@@ -25,7 +25,7 @@ def create_input_df(input_symptoms):
     return predictions
 
 
-file = open('Dataset\symptoms.txt', 'r')
+file = open('Dataset/symptoms.txt', 'r')
 symptoms = file.readlines()
 file.close()
 
