@@ -24,7 +24,6 @@ def create_input_df(input_symptoms):
 
     return predictions
 
-
 file = open('Dataset/symptoms.txt', 'r')
 symptoms = file.readlines()
 file.close()
@@ -58,5 +57,7 @@ model_dt = pickle.load(pickle_in)
 
 model_dl = keras.models.load_model("Models/model_dl.keras")
 
-#input_symptoms = ['abscess', 'shortness breath', 'testicular pain', 'vomiting']
-#print(create_input_df(input_symptoms))
+#### Testing ####
+
+# input_symptoms = ['abscess', 'shortness breath', 'testicular pain', 'vomiting']
+# print(create_input_df(input_symptoms))
