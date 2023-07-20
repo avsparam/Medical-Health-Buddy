@@ -38,7 +38,7 @@ for i, element in enumerate(symptoms):
 
 symptoms_list = list(input_symptoms_dict.keys())
 
-file = open('Dataset\diseases.txt', encoding='utf-8')
+file = open('Dataset/diseases.txt', encoding='utf-8')
 diseases = file.readlines()
 file.close()
 
@@ -47,16 +47,16 @@ idx_to_disease = {}
 for i, element in enumerate(diseases):
     idx_to_disease[i] = element.strip()
 
-pickle_in = open("Models\model_lr.pkl","rb")
+pickle_in = open("Models/model_lr.pkl","rb")
 model_lr = pickle.load(pickle_in)
 
-pickle_in = open("Models\model_knn.pkl","rb")
+pickle_in = open("Models/model_knn.pkl","rb")
 model_knn = pickle.load(pickle_in)
 
-pickle_in = open("Models\model_dt.pkl","rb")
+pickle_in = open("Models/model_dt.pkl","rb")
 model_dt = pickle.load(pickle_in)
 
-model_dl = keras.models.load_model("Models\model_dl.keras")
+model_dl = keras.models.load_model("Models/model_dl.keras")
 
 #input_symptoms = ['abscess', 'shortness breath', 'testicular pain', 'vomiting']
 #print(create_input_df(input_symptoms))
