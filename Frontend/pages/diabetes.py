@@ -33,7 +33,8 @@ def predict(input_data):
 st.markdown('# Diabetes Prediction')
 st.markdown('*The model used here is trained on a dataset containing medical information and laboratory analysis of '
             'Iraqi patients. This data was acquired from the laboratory of Medical City Hospital and the Specialized '
-            'Center for Endocrinology and Diabetes (Al-Kindi Teaching Hospital).*')
+            'Center for Endocrinology and Diabetes (Al-Kindi Teaching Hospital).* '
+            'https://data.mendeley.com/datasets/wj9rwkp9c2/1')
 
 parameters = ['Age', 'Urea', 'Creatinine ratio', 'HBA1C',
               'Cholesterol', 'Triglycerides', 'HDL', 'LDL',
