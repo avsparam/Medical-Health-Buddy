@@ -1,11 +1,22 @@
 import pandas as pd
 import streamlit as st
 import numpy as np
+from sklearn.preprocessing import StandardScaler
 import pickle
 
 
 def predict(input_data):
     inp = np.asarray(input_data).reshape(1, -1)
+
+    heart_data = pd.read_csv('Dataset/heart_disease_data.csv')
+
+    X = heart_data.drop(columns='target', axis=1)
+    scaler = StandardScaler()
+    scaler.fit(X)
+
+    inp = scaler.transform(inp)
+
+    print(inp)
 
     model = pickle.load(open('Models/heart_disease_model.pkl', 'rb'))
     prediction = model.predict(inp)[0]
@@ -23,14 +34,30 @@ st.markdown('*The model used here is trained on a dataset containing laboratory 
             'heart disease.* '
             'https://www.kaggle.com/datasets/johnsmith88/heart-disease-dataset')
 
+parameters = {'Age': 1, 'Sex': 2, 'Type of Chest Pain': 3, 'Resting Blood Pressure (in mm Hg)': 4,
+              'Serum Cholesterol (in mg/dl)': 5, 'Fasting Blood Sugar (>120 mg/dl)': 6,
+              'Resting Electrocardiograph': 7, 'Maximum Heart Rate': 8, 'Exercise Induced Angina': 9,
+              'ST depression induced by exercise relative to rest': 10,
+              'The slope of the peak exercise ST segment': 11, 'Number of major vessels colored by fluoroscopy': 12,
+              'Thallium-201 (Myocardial Perfusion Imaging)': 13
+              }
+
 numerical_parameters = ['Age', 'Resting Blood Pressure (in mm Hg)',
                         'Serum Cholesterol (in mg/dl)', 'Maximum Heart Rate',
                         'ST depression induced by exercise relative to rest',
-                        'Number of major vessels colored by fluoroscopy',]
+                        'Number of major vessels colored by fluoroscopy']
+
+numerical_parameters_help = ['**Your age in years.**',
+                             '**...** Normal Range: 5 to 20 mg/dl',
+                             '**...** Normal Range: 0.74 to 1.35 mg/dL [men]; 0.59 to 1.04 mg/dL [women]',
+                             '**...** Normal Range: 4% to 5.6%',
+                             '**...** Normal Range: 125 to 200mg/dL',
+                             '**...** Normal Range: Less than 150 mg/dL'
+                             ]
 
 categorical_parameters = ['Sex', 'Type of Chest Pain', 'Fasting Blood Sugar (>120 mg/dl)',
                           'Resting Electrocardiograph', 'Exercise Induced Angina',
-                          'The slope of the peak exercise ST segment', 'thal']
+                          'The slope of the peak exercise ST segment', 'Thallium-201 (Myocardial Perfusion Imaging)']
 
 categorical_parameters_options = [{'female': 0, 'male': 1},
                                   {'typical angina': 1, 'atypical angina': 2, 'non-anginal pain': 3, 'asymptomatic': 4},
@@ -43,25 +70,32 @@ categorical_parameters_options = [{'female': 0, 'male': 1},
                                   {'normal': 3, 'fixed defect': 6, 'reversable defect': 7}
                                   ]
 
-parameters_help = ['**Your age in years.**',
-                   '**Level of urea in your blood.** Normal Range: 5 to 20 mg/dl',
-                   '**The ratio of creatinine in your urine to the creatinine level in your blood.** Normal Range: 0.74 to 1.35 mg/dL [men]; 0.59 to 1.04 mg/dL [women]',
-                   '**Your average blood glucose (sugar) levels for the last two to three months.** Normal Range: 4% to 5.6%',
-                   '**Your total cholesterol level, which is a fatty substance found in your blood.** Normal Range: 125 to 200mg/dL',
-                   '**Your triglyceride level, which is a type of fat found in your blood.** Normal Range: Less than 150 mg/dL',
-                   '**High-Density Lipoprotein, often referred to as "good" cholesterol.** Normal Range: 35 to 65 mg/dL [men], 35 to 80 mg/dL [women]',
-                   '**Low-Density Lipoprotein, often referred to as "bad" cholesterol.** Normal Range: Less than 100mg/dL',
-                   '**Very Low-Density Lipoprotein, which is a type of lipoprotein that carries triglycerides in the blood.** Normal Range: 2 to 30 mg/dL',
-                   '**Body mass index (weight in kg/(height in m)^2).** Normal Range: 18.5 to 24.9']
+categorical_parameters_help = ['**Your gender.**',
+                               '**...** Normal Range: 5 to 20 mg/dl',
+                               '**...** Normal Range: 0.74 to 1.35 mg/dL [men]; 0.59 to 1.04 mg/dL [women]',
+                               '**...** Normal Range: 4% to 5.6%',
+                               '**...** Normal Range: 125 to 200mg/dL',
+                               '**...** Normal Range: Less than 150 mg/dL',
+                               '**...** Normal Range: Less than 150 mg/dL'
+                               ]
 
 input_data = [62, 0, 0, 140, 268, 0, 0, 160, 0, 3.6, 0, 2, 2]
 
-# input_data[0] = {'Male': 0, 'Female': 1}[
-#     st.selectbox(label='Gender', options=['Male', 'Female'], index=1, help='Enter your gender')]
-#
-# for i, parameter in enumerate(parameters):
-#     input_data[i + 1] = st.text_input(label=parameter, value=input_data[i + 1], help=parameters_help[i])
-#
+for i, parameter in enumerate(categorical_parameters):
+    input_data[parameters[parameter] - 1] = categorical_parameters_options[i][
+        st.selectbox(label=parameter,
+                     options=categorical_parameters_options[i].keys(),
+                     index=input_data[parameters[parameter] - 1],
+                     help=categorical_parameters_help[i])]
+
+for i, parameter in enumerate(numerical_parameters):
+    input_data[parameters[parameter] - 1] = st.text_input(label=parameter,
+                                                          value=input_data[parameters[parameter] - 1],
+                                                          help=numerical_parameters_help[i])
+
 if st.button("Predict"):
-    prediction = predict(input_data)
+    numerical_input_data = []
+    for value in input_data:
+        numerical_input_data.append(float(value))
+    prediction = predict(numerical_input_data)
     st.markdown(f'# The person {prediction}')
