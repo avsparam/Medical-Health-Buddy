@@ -5,6 +5,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import ExtraTreesClassifier
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import cross_validate
+import pickle
 
 df = pd.read_csv("Dataset/liver.csv")
 
@@ -37,3 +38,5 @@ scores = cross_validate(model, X_train, Y_train, cv=5, n_jobs=-1, verbose=1, ret
 for est in scores['estimator']:
     accuracy = accuracy_score(Y_test, est.predict(X_test))
     print('Accuracy: ', round(accuracy * 100, 2))
+
+pickle.dump(obj=scores['estimator'][4], file=open('Models/liver_model.pkl', 'wb'))
