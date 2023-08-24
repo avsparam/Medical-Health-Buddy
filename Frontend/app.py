@@ -1,48 +1,12 @@
 import streamlit as st
-import predict
 
-MAX_SYMPTOMS = 4
-
-def show_prediction(input_values):
-    predictions=predict.create_input_df(input_values)
-    st.write(f'''# Predicted Disease using different models\n
-    LR: {predictions[0]}\n
-    KNN: {predictions[1]}\n
-    DT: {predictions[2]}\n
-    DL: {predictions[3]}''')
-
-
-st.title("Health Buddy")
-symptoms_list = predict.symptoms_list
-
-#### Style 1 Start ####
-
-print('''
-input_values = []
-
-for i in range(MAX_SYMPTOMS):
-    input_values.append(st.selectbox(f"Symptom {i + 1}", symptoms_list))
-
-if st.button("Add Selectbox"):
-    add_selectbox()
-
-st.write("Selected Symptoms:")
-for i, value in enumerate(input_values):
-    st.write(f"{value}")
-''')
-
-#### Style 1 End ####
-
-#### Style 2 Start ####
-
-input_values = st.multiselect("Select symptoms:", symptoms_list, [], key="options")
-
-if len(input_values) > MAX_SYMPTOMS:
-    st.warning(f"Select up to {MAX_SYMPTOMS} symptoms. Please deselect some symptoms. Prediction might be inaccurate.")
-    input_values = input_values[:MAX_SYMPTOMS]
-
-#### Style 2 End ####
-
-if st.button("Get Prediction"):
-    show_prediction(input_values)
-
+st.markdown('''<!DOCTYPE html>
+<html>
+<body>
+  <h1>Welcome to Medical Health Buddy!</h1>
+  <img class="product-image" src="Resources/medical_health_buddy_logo.png" alt="Product Image">
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id velit id mauris faucibus elementum. Vivamus consequat mauris id felis euismod, et interdum ex eleifend. Morbi et lectus vitae quam mollis volutpat. In pellentesque sed sapien eu mollis. Mauris vulputate aliquet ipsum, sed fringilla ipsum lacinia non.</p>
+  <p>Proin elementum purus quis ultrices fringilla. Sed sed nisi at ligula ultricies blandit. Nam luctus convallis enim, ac ullamcorper elit consequat et. Nulla facilisi. In finibus tempor metus, ut interdum arcu pellentesque at. Suspendisse potenti. Nam sed velit risus.</p>
+  <a class="button" href="product-details.html">Learn More</a>
+</body>
+</html>''', unsafe_allow_html=True)
