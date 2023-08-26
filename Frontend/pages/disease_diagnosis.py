@@ -38,6 +38,7 @@ def create_input_df(input_symptoms):
     return predictions
 
 
+@st.cache_resource
 def get_model():
     pickle_in = open("Models/model_lr.pkl","rb")
     model_lr = pickle.load(pickle_in)
@@ -77,35 +78,13 @@ for i, element in enumerate(diseases):
 
 model_lr, model_knn, model_dt, model_dl = get_model()
 
-st.title("Health Buddy")
-
-#### Style 1 Start ####
-
-print('''
-input_values = []
-
-for i in range(MAX_SYMPTOMS):
-    input_values.append(st.selectbox(f"Symptom {i + 1}", symptoms_list))
-
-if st.button("Add Selectbox"):
-    add_selectbox()
-
-st.write("Selected Symptoms:")
-for i, value in enumerate(input_values):
-    st.write(f"{value}")
-''')
-
-#### Style 1 End ####
-
-#### Style 2 Start ####
+st.markdown("# General Disease Diagnosis")
 
 input_values = st.multiselect("Select symptoms:", symptoms_list, [], key="options")
 
 if len(input_values) > MAX_SYMPTOMS:
     st.warning(f"Select up to {MAX_SYMPTOMS} symptoms. Please deselect some symptoms. Prediction might be inaccurate.")
     input_values = input_values[:MAX_SYMPTOMS]
-
-#### Style 2 End ####
 
 if st.button("Get Prediction"):
     show_prediction(input_values)
