@@ -1,0 +1,134 @@
+Symptom,Description,Cleaned Symptom
+itching,A feeling of discomfort in the skin that causes you to want to scratch,Itching
+skin_rash,"A red or inflamed area of the skin that may itch, burn, or sting",SkinRash
+nodal_skin_eruptions,"Small, raised bumps on the skin that are often red and tender",NodalSkinEruptions
+continuous_sneezing,Sneezing repeatedly,ContinuousSneezing
+shivering,Uncontrolled trembling,Shivering
+chills,A sudden feeling of coldness,Chills
+joint_pain,Pain in one or more joints,JointPain
+stomach_pain,Pain in the stomach,StomachPain
+acidity,A feeling of burning in the stomach or chest,Acidity
+ulcers_on_tongue,Sores on the tongue,UlcersOnTongue
+muscle_wasting,Loss of muscle tissue,MuscleWasting
+vomiting,Forcibly ejecting the contents of the stomach through the mouth,Vomiting
+burning_micturition,Pain or burning sensation during urination,BurningMicturation
+spotting_urination,Passing small amounts of blood in the urine,SpottingUrination
+fatigue,Extreme tiredness or lack of energy,Fatigue
+weight_gain,Gaining weight unintentionally,WeightGain
+anxiety,"A feeling of worry, nervousness, or unease",Anxiety
+cold_hands_and_feets,Having cold hands and feet,ColdHandsAndFeet
+mood_swings,Sudden changes in mood,MoodSwings
+weight_loss,Losing weight unintentionally,WeightLoss
+restlessness,Being unable to sit still or relax,Restlessness
+lethargy,Lack of energy or motivation,Lethargy
+patches_in_throat,White or gray patches on the throat,PatchesInThroat
+irregular_sugar_level,Having blood sugar levels that are too high or too low,IrregularSugarLevel
+cough,A sudden expulsion of air from the lungs,Cough
+high_fever,A body temperature that is higher than normal,HighFever
+sunken_eyes,Eyes that appear to be sunken into the skull,SunkenEyes
+breathlessness,Difficulty breathing,Breathlessness
+sweating,Producing sweat,Sweating
+dehydration,Loss of fluids from the body,Dehydration
+indigestion,Difficulty digesting food,Indigestion
+headache,Pain in the head,Headache
+yellowish_skin,Skin that has a yellow tint,YellowishSkin
+dark_urine,Urine that is darker than normal,DarkUrine
+nausea,A feeling of wanting to vomit,Nausea
+loss_of_appetite,Loss of interest in eating,LossOfAppetite
+pain_behind_the_eyes,Pain behind the eyes,PainBehindTheEyes
+back_pain,Pain in the back,BackPain
+constipation,Difficulty passing stool,Constipation
+abdominal_pain,Pain in the abdomen,AbdominalPain
+diarrhoea,"Loose, watery stool",Diarrhoea
+mild_fever,A body temperature that is slightly higher than normal,MildFever
+yellow_urine,Urine that is yellow in color,YellowUrine
+yellowing_of_eyes,The whites of the eyes becoming yellow,YellowingOfEyes
+acute_liver_failure,Rapid loss of liver function,AcuteLiverFailure
+fluid_overload,Excess fluid in the body,FluidOverload
+swelling_of_stomach,Swelling of the stomach,SwellingOfStomach
+swelled_lymph_nodes,"Swollen glands in the neck, armpits, or groin",SwelledLymphNodes
+malaise,A feeling of general unwellness,Malaise
+blurred_and_distorted_vision,Vision that is blurred or distorted,BlurredAndDistortedVision
+phlegm,Mucus that is produced in the airways,Phlegm
+throat_irritation,Irritation of the throat,ThroatIrritation
+redness_of_eyes,Redness of the whites of the eyes,RednessOfEyes
+sinus_pressure,Feeling of pressure in the sinuses,SinusPressure
+runny_nose,A runny or dripping nose,RunnyNose
+congestion,A feeling of fullness in the nose,Congestion
+chest_pain,Pain in the chest,ChestPain
+weakness_in_limbs,Weakness in the arms or legs,WeaknessInLimbs
+fast_heart_rate,A heart rate that is faster than normal,FastHeartRate
+pain_during_bowel_movements,Pain during bowel movements,PainDuringBowelMovements
+pain_in_anal_region,Pain in the anal region,PainInAnalRegion
+bloody_stool,Stool that contains blood,BloodyStool
+irritation_in_anus,Irritation of the anus,IrritationInAnus
+neck_pain,Pain in the neck,NeckPain
+dizziness,A feeling of lightheadedness or unsteadiness,Dizziness
+cramps,Muscle spasms,Cramps
+bruising,Discoloration of the skin caused by bleeding under the skin,Bruising
+obesity,Excessive body fat,Obesity
+swollen_legs,Swelling of the legs,SwollenLegs
+swollen_blood_vessels,Swelling of the blood vessels,SwollenBloodVessels
+puffy_face_and_eyes,Swelling of the face and eyes,PuffyFaceAndEyes
+enlarged_thyroid,An enlarged thyroid gland,EnlargedThyroid
+brittle_nails,Nails that are brittle and break easily,BrittleNails
+swollen_extremeties,Swelling of the extremities,SwollenExtremities
+excessive_hunger,Extreme hunger,ExcessiveHunger
+extra_marital_contacts,Having sexual relationships outside of marriage,ExtraMaritalContacts
+drying_and_tingling_lips,Lips that are dry and feel numb or tingly,DryingAndTinglingLips
+slurred_speech,Speech that is slurred or difficult to understand,SlurredSpeech
+knee_pain,Pain in the knee joint,KneePain
+hip_joint_pain,Pain in the hip joint,HipJointPain
+muscle_weakness,Weakness in the muscles,MuscleWeakness
+stiff_neck,A stiff neck that is difficult to move,StiffNeck
+swelling_joints,Swelling of the joints,SwellingJoints
+movement_stiffness,Difficulty moving the joints,MovementStiffness
+spinning_movements,Feeling like you are spinning or moving around in circles,SpinningMovements
+loss_of_balance,Difficulty maintaining balance,LossOfBalance
+unsteadiness,Feeling unsteady on your feet,Unsteadiness
+weakness_of_one_body_side,Weakness on one side of the body,WeaknessOfOneBodySide
+loss_of_smell,Unable to smell,LossOfSmell
+bladder_discomfort,Discomfort in the bladder,BladderDiscomfort
+foul_smell_ofurine,Urine that has a foul smell,FoulSmellOfUrine
+continuous_feel_of_urine,The feeling that you need to urinate even though your bladder is empty,ContinuousFeelOfUrine
+passage_of_gases,Passing gas more frequently than usual,PassageOfGases
+internal_itching,Itching that is felt inside the body,InternalItching
+toxic_look_(typhos),"A pale, grayish complexion with sunken eyes and a yellow tint to the skin",ToxicLook(Typhus)
+depression,"A feeling of sadness, emptiness, or despair",Depression
+irritability,Easily annoyed or angered,Irritability
+muscle_pain,Pain in the muscles,MusclePain
+altered_sensorium,A change in the level of consciousness or awareness,AlteredSensorium
+red_spots_over_body,Red spots on the skin,RedSpotsOverBody
+belly_pain,Pain in the abdomen,BellyPain
+abnormal_menstruation,"Changes to the menstrual cycle, such as heavier bleeding or more frequent periods",AbnormalMenstruation
+dischromic_patches,Dark or light patches on the skin,DischromicPatches
+watering_from_eyes,Increased production of tears,WateringFromEyes
+increased_appetite,Eating more than usual,IncreasedAppetite
+polyuria,Passing more urine than usual,Polyuria
+family_history,Having a family history of a particular disease,FamilyHistory
+mucoid_sputum,Sputum that is thick and sticky,MucoidSputum
+rusty_sputum,Sputum that is brown or rust-colored,RustySputum
+lack_of_concentration,Difficulty concentrating on tasks,LackOfConcentration
+visual_disturbances,"Changes in vision, such as blurred vision, double vision, or seeing flashes of light",VisualDisturbances
+receiving_blood_transfusion,Receiving blood from another person,ReceivingBloodTransfusion
+receiving_unsterile_injections,Receiving injections with needles that are not clean,ReceivingUnsterileInjections
+coma,A state of deep unconsciousness from which it is difficult to wake up,Coma
+stomach_bleeding,Bleeding from the stomach,StomachBleeding
+distention_of_abdomen,Swelling of the abdomen,DistentionOfAbdomen
+history_of_alcohol_consumption,Having a history of drinking alcohol excessively,HistoryOfAlcoholConsumption
+fluid_overload,Excess fluid in the body,FluidOverload
+blood_in_sputum,Sputum that contains blood,BloodInSputum
+prominent_veins_on_calf,"Large, visible veins on the calves",ProminentVeinsOnCalf
+palpitations,A racing or pounding heartbeat,Palpitations
+painful_walking,Painful or difficult walking,PainfulWalking
+pus_filled_pimples,Pimples that contain pus,PusFilledPimples
+blackheads,"Blackheads are small, dark spots on the skin that are caused by oil and dead skin cells",Blackheads
+scurring,A condition in which the skin peels off in thin layers,Scurvy
+skin_peeling,Skin that is peeling off,SkinPeeling
+silver_like_dusting,A silvery-white appearance to the skin,SilverLikeDusting
+small_dents_in_nails,Small dents or depressions in the nails,SmallDentsInNails
+inflammatory_nails,"Nails that are red, swollen, and painful",InflammatoryNails
+blister,"A small, raised area of skin that is filled with fluid",Blister
+red_sore_around_nose,"A red, sore area around the nose",RedSoreAroundNose
+yellow_crust_ooze,A yellow crust that oozes from a sore or wound,YellowCrustOoze
+prognosis,The expected course of a disease or condition,Prognosis
