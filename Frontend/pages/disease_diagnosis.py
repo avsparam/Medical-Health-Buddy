@@ -9,7 +9,7 @@ MAX_SYMPTOMS = 4
 openai.api_key = st.secrets["OPENAI_API_KEY"]
 
 
-def generate_questions(messages, temperature=0.7, max_tokens=256, top_p=0.9, n=2, stop=None, frequency_penalty=0.9, presence_penalty=0.9):
+def generate_response(messages, temperature=0.7, max_tokens=256, top_p=0.9, n=2, stop=None, frequency_penalty=0.9, presence_penalty=0.9):
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=messages,
@@ -33,20 +33,22 @@ def chat():
                     "role": "user",
                     "content": f'''You are a doctor. 
                     A patient has the following symptoms: {" ".join(input_values)}.
-                    You have make a possible diagnosis. 
+                    You have to make a possible diagnosis. 
                     The primary diagnosis is {" ".join(st.session_state.predictions)}. 
                     Ask further questions to make the diagnosis more accurate. 
                     The questions must be framed in the way a doctor would ask a patient questions. 
-                    If you need to ask questions, return one question at a time. 
+                    If you need more information to make diagnosis, ask one question at a time. 
+                    Only ask questions, and nothing else.
                     Ask questions and wait for the patient's answer.
                     Repeat this process until, you have all the information. 
-                    If you have all the required information, then return your final diagnosis.''',
+                    If you have all the required information, then only return your final diagnosis.''',
                 },
             ]
-            response = generate_questions(st.session_state.messages)
+            response = generate_response(st.session_state.messages)
             st.session_state.messages.append({"role": "assistant", "content": response})
+            st._rerun()
 
-        for i, message in enumerate(st.session_state.messages):
+        for i, message in enumerate(st.session_state.messages[1:]):
             if message["role"] == "user":
                 with st.chat_message("user"):
                     st.write(message["content"])
@@ -57,10 +59,11 @@ def chat():
         user_input = st.text_area("You:", " ", key="user_input")
         submit_button = st.button("Submit")
 
-        if user_input.strip() != "":
+        if submit_button and user_input.strip() != "":
             st.session_state.messages.append({"role": "user", "content": user_input})
-            response = generate_questions(st.session_state.messages)
+            response = generate_response(st.session_state.messages)
             st.session_state.messages.append({"role": "assistant", "content": response})
+            st._rerun()
 
 
 def show_prediction(input_values):
